@@ -1,0 +1,18 @@
+h1 {
+  color: black;
+  margin-left: 20px;
+}
+
+#results tr:nth-child(even){background-color: #f7e5cb;}
+
+#results tr:nth-child(even){background-color: #f5cf92;}
+
+#results tr:hover {background-color: rgb(255, 219, 163);}
+
+footer{
+    color: white;
+}
+.selected {
+            background-color: #dc3545;
+            color: #FFF;
+}

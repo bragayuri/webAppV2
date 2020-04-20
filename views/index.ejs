@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+ <!-- This Index file is located inside the Views folder which is public.
+ This file will hold my html code and also Bootstrap code.
+ Author Yuri Braga 2017141
+ Code extracted from https://github.com/mikhail-cct/CA1-In-class-Demo 
+ BootStrap: https://github.com/BlackrockDigital/startbootstrap-bare -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  
+
+    <title>Allergen Chart Table</title>
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+
+ 
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Allergen Table</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="js/about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </div>
+    </div>
+  </nav>
+
+
+  <!-- Page Content -->
+<div class="view" style="background-image: url('https://enichols.com/wp-content/uploads/2019/05/food-allergies-1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  
+  <div class="container">
+  <div class="bg"></div>            
+    <div class="row">
+      <div style="background-color: rgb(242, 227, 206, 0.6)" class="col-lg-12 text-center">
+        <h1 class="mt-5">DISHES AND THEIR ALLERGEN CONTENT  </h1>
+        <p class="lead"></p>
+        <!-- Div with Table coming from XSL file -->
+      </div>
+      <div style="background-color: rgb(242, 227, 206,0.9)"><div id="results" class="col-lg-12 text-center" ></div>
+      
+      
+       <!-- Div to organize the User Input -->
+       <div id="buttons" class="col-lg-12 text-center" background-color: rgb(242, 227, 206,0.9)>
+        
+      
+            <div class="col-lg-4 text-center order-2">
+           <!-- This form will organize each element to be added to the table -->
+            <form enctype="application/json" action="/post/json" method="post">
+                <div class="form-group">
+                   
+                </div>
+                <div class="form-group">
+                <!-- Here start the input text fields -->
+                    <input class="form-control" type="text" name="Dishes" placeholder="Dish">
+                     
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="Celery" placeholder="Celery">
+                    <input class="form-control" type="text" name="Gluten" placeholder="Gluten">
+                    <input class="form-control" type="text" name="Crustaceous" placeholder="Crustaceous">
+                    <input class="form-control" type="text" name="eggs" placeholder="eggs">
+                      <input class="form-control" type="text" name="Fish" placeholder="Fish">
+                        <input class="form-control" type="text" name="Lupin" placeholder="Lupin">
+                          <input class="form-control" type="text" name="milk" placeholder="milk">
+                            <input class="form-control" type="text" name="Molluscs" placeholder="Molluscs">
+                              <input class="form-control" type="text" name="Mustard" placeholder="Mustard">
+                                <input class="form-control" type="text" name="Nuts" placeholder="Nuts">
+                                  <input class="form-control" type="text" name="Peanuts" placeholder="Peanuts">
+                                    <input class="form-control" type="text" name="SesameSeeds" placeholder="SesameSeeds">
+                                      <input class="form-control" type="text" name="Soya" placeholder="Soya">
+                                       <input class="form-control" type="text" name="SulphurDioxide" placeholder="SulphurDioxide">
+                </div>
+                <!-- This button add a dish to the table -->
+                <button type="submit" class="btn btn-primary">ADD DISH</button>
+                
+                    <p class="text-muted">To delete a Dish, click the required row first</p>
+            </form>
+            <!-- This button delete a dish to the table -->
+                 <button id="delete" class="btn btn-block btn-danger">Delete</button>
+               
+                    
+                    <br>
+                  
+
+          
+
+      <div> 
+      
+      </div>
+
+       
+   
+  
+       
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+ <script src="jQuery/jquery.min.js"></script>
+ <script src="jQuery/table.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+</body>
+ 
+  <footer>
+            <p> Developed by Yuri Braga 2017141 </p>
+        </footer>
+
+</html>
