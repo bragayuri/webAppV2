@@ -48,5 +48,14 @@ footer{
 }
 
 .container{
- height:85%;
+ height: 78%;;
+}
+
+.form-group{
+    display: flex;
+    width: 85%;
+}
+
+.check-group{
+    
 }

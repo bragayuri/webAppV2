@@ -19,7 +19,8 @@ const bodyParser = require("body-parser");
 
 // ROuting imports####################################################
 const homeController = require("./controller/home.js")
-// const dishController = require("./controller/dish.js")
+
+const dishModel = require("./model/food.js")
 
 // router = express.Router();
 //CRUD with Express########################################
@@ -38,6 +39,19 @@ const homeController = require("./controller/home.js")
 // app.delete('/food/:id', homeController.deleteDish);
 // app.put('/food/:id', homeController.updateDish);
 
+app.post("/addDish", (req, res) => {
+  var myData = new dishModel(req.body);
+  myData.save()
+    .then(item => {
+      res.send("item saved to database");
+    })
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+    });
+});
+
+
+
 
 
 
@@ -54,7 +68,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true }));
 
 mongoose.connect(
-  "mongodb+srv://FoodAllergen:pass1234@cluster0-fthuf.mongodb.net/test",
+  "mongodb+srv://FoodAllergen:pass1234@cluster0-fthuf.mongodb.net/FoodAllergen",
   { useNewUrlParser: true }
 );
 
@@ -83,3 +97,21 @@ app.get('/', homeController);
 // });
 
 // server.listen(3000);
+
+function isChecked() {
+    document.getElementsByName("Celery").checked = true;
+    document.getElementsByName("Gluten").checked = true;
+    document.getElementsByName("Crustaceous").checked = true;
+    document.getElementsByName("Milk").checked = true;
+    document.getElementsByName("Moluscs").checked = true;
+    document.getElementsByName("Mustard").checked = true;
+    document.getElementsByName("Nuts").checked = true;
+    document.getElementsByName("Peanuts").checked = true;
+    document.getElementsByName("SesameSeeds").checked = true;
+    document.getElementsByName("Soya").checked = true;
+    document.getElementsByName("SulphurDioxide").checked = true;
+    document.getElementsByName("Eggs").checked = true;
+    document.getElementsByName("Fish").checked = true;
+    document.getElementsByName("Lupin").checked = true;
+    
+}

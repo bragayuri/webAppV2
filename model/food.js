@@ -6,15 +6,26 @@ const Schema = mongoose.Schema;
 
 const FoodSchema = new Schema({
   dishName: String,
-  dishAllergen: String,
-  dishPicture: String,
+  hasGluten: Boolean,
+  hasCelery: Boolean,
+  hasCrustaceous: Boolean,
+  hasEggs: Boolean,
+  hasFish: Boolean,
+  hasNuts: Boolean,
+  hasSesame: Boolean,
+  hasSoya: Boolean,
+  hasSulphur: Boolean,
+  hasLupin: Boolean,
+  hasNuts: Boolean,
+  hasPeanuts: Boolean,
+  hasMilk: Boolean,
+
+
+  
   
 });
 
-FoodSchema.pre("save", function (next) {
-    const food = this;
 
-})
 
 const FoodModel = mongoose.model("Food", FoodSchema);
 
