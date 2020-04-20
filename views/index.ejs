@@ -55,17 +55,18 @@
 
 
   <!-- Page Content -->
-<div class="view" style="background-image: url('https://enichols.com/wp-content/uploads/2019/05/food-allergies-1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+<div class="view">
   
   <div class="container">
   <div class="bg"></div>            
     <div class="row">
-      <div style="background-color: rgb(242, 227, 206, 0.6)" class="col-lg-12 text-center">
+      <div id="main-txt" style="background-color: rgb(242, 227, 206, 0.6)" class="col-lg-12 text-center">
         <h1 class="mt-5">DISHES AND THEIR ALLERGEN CONTENT  </h1>
         <p class="lead"></p>
         <!-- Div with Table coming from XSL file -->
       </div>
-      <div style="background-color: rgb(242, 227, 206,0.9)"><div id="results" class="col-lg-12 text-center" ></div>
+      <div id="main-content">
+      <div id="results" class="col-lg-12 text-center" ></div>
       
       
        <!-- Div to organize the User Input -->
@@ -83,29 +84,49 @@
                     <input class="form-control" type="text" name="Dishes" placeholder="Dish">
                      
                 </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="Celery" placeholder="Celery">
-                    <input class="form-control" type="text" name="Gluten" placeholder="Gluten">
-                    <input class="form-control" type="text" name="Crustaceous" placeholder="Crustaceous">
-                    <input class="form-control" type="text" name="eggs" placeholder="eggs">
-                      <input class="form-control" type="text" name="Fish" placeholder="Fish">
-                        <input class="form-control" type="text" name="Lupin" placeholder="Lupin">
-                          <input class="form-control" type="text" name="milk" placeholder="milk">
-                            <input class="form-control" type="text" name="Molluscs" placeholder="Molluscs">
-                              <input class="form-control" type="text" name="Mustard" placeholder="Mustard">
-                                <input class="form-control" type="text" name="Nuts" placeholder="Nuts">
-                                  <input class="form-control" type="text" name="Peanuts" placeholder="Peanuts">
-                                    <input class="form-control" type="text" name="SesameSeeds" placeholder="SesameSeeds">
-                                      <input class="form-control" type="text" name="Soya" placeholder="Soya">
-                                       <input class="form-control" type="text" name="SulphurDioxide" placeholder="SulphurDioxide">
-                </div>
+                        <div class="form-group" action="#">
+                <input type="checkbox" name="Celery" class="checkbox">
+                <label for="Celery">Celery</label>
+                 <input type="checkbox" name="Gluten" class="checkbox">
+                  <label for="Gluten ">Gluten</label>
+                  <input type="checkbox" name="Crustaceous" class="checkbox">
+                   <label for="Crusteceous">Crustaceous</label>
+                   <input type="checkbox" name="Eggs" class="checkbox">
+                    <label for="Eggs">Eggs</label>
+                    <input type="checkbox" name="Fish" class="checkbox">
+                     <label for="Fish">Fish</label>
+                     <input type="checkbox" name="Lupin" class="checkbox">
+                      <label for="Lupin">Lupin</label>
+                      <input type="checkbox" name="Milk" class="checkbox">
+                       <label for="Milk">Milk</label>
+                       <input type="checkbox" name="Moluscs" class="checkbox">
+                        <label for="Moluscs">Moluscs</label>
+                        <input type="checkbox" name="Mustard" class="checkbox">
+                         <label for="Mustard">Mustard</label>
+                         <input type="checkbox" name="Nuts" class="checkbox">
+                          <label for="Nuts">Nuts</label>
+                          <input type="checkbox" name="Peanuts" class="checkbox">
+                           <label for="Peanuts">Peanuts</label>
+                           <input type="checkbox" name="SesameSeeds" class="checkbox">
+                            <label for="SesameSeeds">Sesame Seeds</label>
+                            <input type="checkbox" name="Soya" class="checkbox">
+                             <label for="Soya">Soya</label>
+                             <input type="checkbox" name="SulphurDioxide" class="checkbox">
+                              <label for="SulphurDioxide">Sulphur Dioxide</label>
+               
+                
+        
+                   
                 <!-- This button add a dish to the table -->
-                <button type="submit" class="btn btn-primary">ADD DISH</button>
+               <div class="buttons"> <button id="btn" type="submit" class="btn btn-primary">ADD DISH</button>
+                <button id="delete" class="btn btn-block btn-danger">Delete</button>
+                </div>
                 
                     <p class="text-muted">To delete a Dish, click the required row first</p>
             </form>
             <!-- This button delete a dish to the table -->
-                 <button id="delete" class="btn btn-block btn-danger">Delete</button>
+                
+                 </form>
                
                     
                     <br>
