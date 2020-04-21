@@ -39,16 +39,6 @@ const dishModel = require("./model/food.js")
 // app.delete('/food/:id', homeController.deleteDish);
 // app.put('/food/:id', homeController.updateDish);
 
-app.post("/addDish", (req, res) => {
-  var myData = new dishModel(req.body);
-  myData.save()
-    .then(item => {
-      res.send("item saved to database");
-    })
-    .catch(err => {
-      res.status(400).send("unable to save to database");
-    });
-});
 
 
 
@@ -85,7 +75,33 @@ app.listen(3001, ()=> {
     console.log("App listening on port 3001");
 });
 
+  function isChecked() {
+      window.document.alert("Clicou")
+    
+    console.log("Teste");
+    
+   function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+   
+//    var celery =  document.getElementsByName("Celery").checked = true;
+//    var gluten =  document.getElementsByName("Gluten").checked = true;
+//    var crustaceous= document.getElementsByName("Crustaceous").checked = true;
+//    var milk= document.getElementsByName("Milk").checked = true;
+//    var muluscus= document.getElementsByName("Moluscs").checked = true;
+//    var mustard= document.getElementsByName("Mustard").checked = true;
+//    var nuts= document.getElementsByName("Nuts").checked = true;
+//    var peanuts= document.getElementsByName("Peanuts").checked = true;
+//    var sesame=  document.getElementsByName("SesameSeeds").checked = true;
+//    var soya=  document.getElementsByName("Soya").checked = true;
+//    var sulphur= document.getElementsByName("SulphurDioxide").checked = true;
+//    var eggs = document.getElementsByName("Eggs").checked = true;
+//    var fish = document.getElementsByName("Fish").checked = true;
+//    var lupin =  document.getElementsByName("Lupin").checked = true;
 
+//    console.log(dishName,celery,gluten,crustaceous,milk,mustard,fish,eggs); 
+
+  }
 //Routes for a page##################################
 app.get('/', homeController);
 
@@ -98,20 +114,15 @@ app.get('/', homeController);
 
 // server.listen(3000);
 
-function isChecked() {
-    document.getElementsByName("Celery").checked = true;
-    document.getElementsByName("Gluten").checked = true;
-    document.getElementsByName("Crustaceous").checked = true;
-    document.getElementsByName("Milk").checked = true;
-    document.getElementsByName("Moluscs").checked = true;
-    document.getElementsByName("Mustard").checked = true;
-    document.getElementsByName("Nuts").checked = true;
-    document.getElementsByName("Peanuts").checked = true;
-    document.getElementsByName("SesameSeeds").checked = true;
-    document.getElementsByName("Soya").checked = true;
-    document.getElementsByName("SulphurDioxide").checked = true;
-    document.getElementsByName("Eggs").checked = true;
-    document.getElementsByName("Fish").checked = true;
-    document.getElementsByName("Lupin").checked = true;
-    
-}
+// 
+
+//   app.post("/addDish", async (req, res) => {
+
+
+
+ 
+
+
+
+ 
+  
