@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<script src="https://kit.fontawesome.com/78a8c90d37.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/78a8c90d37.js" crossorigin="anonymous"></script> -->
 
 
  <!-- This Index file is located inside the Views folder which is public.
@@ -68,10 +68,58 @@
         <!-- Div with Table coming from XSL file -->
       </div>
       <div id="main-content">
+        
+       
+        <table>
+         
+         
+           <tr class="table-head">
+              <th>Dish Name</th>
+              <th>Celery</th>
+              <th>Gluten</th>
+              <th>Crustaceous</th>
+              <th>Eggs</th>
+              <th>Fish</th>
+              <th>Lupin</th>
+              <th>Milk</th>
+              <th>Moluscus</th>
+              <th>Nuts</th>
+              <th>Peanuts</th>
+              <th>Sesame</th>
+              <th>Soya</th>
+              <th>Sulphur Dioxide</th>
+               </tr>
+                 <% for (var i =0; i< dishes.length; i++) { %>
+
+              <tr class="table-row-odd">
+                
+                <td><%= dishes[i].Dishes %></td>
+                <td><%= dishes[i].Celery %></td>
+                <td><%= dishes[i].Gluten %></td>
+                <td><%= dishes[i].Crustaceous%></td>
+                <td><%= dishes[i].Eggs %></td>
+                <td><%= dishes[i].Fish %></td>
+                <td><%= dishes[i].Lupin %></td>
+                <td><%= dishes[i].Milk %></td>
+                <td><%= dishes[i].Moluscus %></td>
+                <td><%= dishes[i].Nuts %></td>
+                <td><%= dishes[i].Peanuts %></td>
+                <td><%= dishes[i].Sesame %></td>
+                <td><%= dishes[i].Soya %></td>
+              
+               </tr>
+              
+               <% } %>
+              </table>
+              
+              
+              
+              
+             
           <div class="form-group">
                     <div class="form-group">
                 <!-- Here start the input text fields -->
-                 <form  method="post">
+                 <form action="/store"  method="post">
                    
              <input class="form-control" type="text" name="Dishes" placeholder="Dish">
                      
@@ -111,26 +159,29 @@
         
                    
                 <!-- This button add a dish to the table -->
-               <div class="buttons"> <button onclick="isChecked()" id="btn" type="submit" class="btn btn-primary">ADD DISH</button>
-              
+               <div class="buttons"> <button fg id="btn" type="submit" class="btn btn-primary">ADD DISH</button>
                 <button id="delete" class="btn btn-block btn-danger">Delete</button>
-                <p id="demo"></p>
+               </form>
+              
+              
+               
                 </div>
+
+              
                 
                     <p class="text-muted">To delete a Dish, click the required row first</p>
-               </form>
+             
                
             </div>
             <!-- This button delete a dish to the table -->
      </div>
-      <button onclick="myFunction()">Click me</button>
+                      
                  
                      <div class="image">
-                     <img src="./img/applepie.jpg" width="400px" height="400px" ></div>  
+                     <!-- <img src="./img/applepie.jpg" width="400px" height="400px" ></div>   -->
                      <div class="allergen"><i class="fas fa-check fa-2x" size="large"></i>
 </div>
-     
-          
+    
       
       
                
@@ -155,11 +206,12 @@
 <script src="js/bootstrap.min.js"></script>
  -->
 
-<script src="index.js"></script>
+<script src="../index.js" >
+</script>
+
+
 </body>
  
-  <footer>
-            <p> Developed by Yuri Braga 2017141 </p>
-        </footer>
+
 
 </html>

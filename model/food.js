@@ -1,34 +1,24 @@
 const mongoose = require("mongoose");
 
-const bcrypt = require("bcrypt");
-
 const Schema = mongoose.Schema;
 
 const FoodSchema = new Schema({
-  dishName: String,
-  hasGluten: Boolean,
-  hasCelery: Boolean,
-  hasCrustaceous: Boolean,
-  hasEggs: Boolean,
-  hasFish: Boolean,
-  hasNuts: Boolean,
-  hasSesame: Boolean,
-  hasSoya: Boolean,
-  hasSulphur: Boolean,
-  hasLupin: Boolean,
-  hasNuts: Boolean,
-  hasPeanuts: Boolean,
-  hasMilk: Boolean,
-
-
-  
-  
+  Dishes: String,
+  Celery: String,
+  Gluten: String,
+  Crustaceous: String,
+  Fish: String,
+  Milk: String,
+  Lupin: String,
+  Moluscus: String,
+  Mustard: String,
+  Nuts: String,
+  SesameSeeds: String,
+  Soya: String,
+  Eggs: String,
+  Peanuts: String,
 });
 
-
-
 const FoodModel = mongoose.model("Food", FoodSchema);
-
-
 
 module.exports = FoodModel;
