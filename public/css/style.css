@@ -3,59 +3,99 @@ h1 {
   margin-left: 20px;
 }
 
-#results tr:nth-child(even){background-color: #f7e5cb;}
+#results tr:nth-child(even) {
+  background-color: #f7e5cb;
+}
 
-#results tr:nth-child(even){background-color: #f5cf92;}
+#results tr:nth-child(even) {
+  background-color: #f5cf92;
+}
 
-#results tr:hover {background-color: rgb(255, 219, 163);}
+#results tr:hover {
+  background-color: rgb(255, 219, 163);
+}
 
-footer{
-    color: white;
+footer {
+  color: white;
 }
 .selected {
-            background-color: #dc3545;
-            color: #FFF;
+  background-color: #dc3545;
+  color: #fff;
 }
 
-.view{
-    background-image:url("/img/superfood.jpg");
-     background-repeat: no-repeat; 
-     background-size: cover; 
-     background-position: center center;
-     height: 100%;
-     width:100%;
-     position: absolute;
+.view {
+  background-image: url("/img/superfood.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
-#main-content{
-    background-color: rgb(242, 227, 206,0.9);
-    width:100%;
-    height:100%;
+#main-content {
+  background-color: rgb(242, 227, 206, 0.9);
+  width: 100%;
+  height: 100%;
 }
 
-.buttons{
-    display: flex;
-    flex-direction: column;
+.buttons {
+  display: flex;
+  flex-direction: column;
 }
 
-#btn{
-    margin-bottom: 2px;
-
+#btn {
+  margin-bottom: 2px;
 }
 
-.row{
-    height: 100%;
+.row {
+  height: 100%;
 }
 
-.container{
- height: 78%;;
+.container {
+  height: 78%;
 }
 
-.form-group{
-    display: flex;
-    width: 85%;
+.form-group {
+  display: flex;
+  width: 85%;
 }
 
-.check-group{
-    
+.table-row-odd {
+  background-color: yellow;
+}
+
+#dish-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#dish-table td,
+#dish-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#dish-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#dish-table tr:hover {
+  background-color: red;
+}
+
+#dish-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4caf50;
+  color: white;
+}
+
+#checkbox-delete:before {
+  content: "\f1f8";
+  font-family: "FontAwesome";
+  background: "white";
+  color: "black";
 }

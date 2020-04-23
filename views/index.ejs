@@ -1,61 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-<!-- <script src="https://kit.fontawesome.com/78a8c90d37.js" crossorigin="anonymous"></script> -->
-
-
- <!-- This Index file is located inside the Views folder which is public.
- This file will hold my html code and also Bootstrap code.
- Author Yuri Braga 2017141
- Code extracted from https://github.com/mikhail-cct/CA1-In-class-Demo 
- BootStrap: https://github.com/BlackrockDigital/startbootstrap-bare -->
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  
-  
-
-    <title>Allergen Chart Table</title>
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-
-</head>
-
+ <%- include('Layouts/header'); -%>
 <body>
 
- 
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Allergen Table</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="js/about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </div>
-    </div>
-  </nav>
-
-
+  <%- include('layouts/navbar') -%>
   <!-- Page Content -->
 <div class="view">
   
@@ -69,117 +18,26 @@
       </div>
       <div id="main-content">
         
+        <%- include('layouts/table') -%>
        
-        <table>
-         
-         
-           <tr class="table-head">
-              <th>Dish Name</th>
-              <th>Celery</th>
-              <th>Gluten</th>
-              <th>Crustaceous</th>
-              <th>Eggs</th>
-              <th>Fish</th>
-              <th>Lupin</th>
-              <th>Milk</th>
-              <th>Moluscus</th>
-              <th>Nuts</th>
-              <th>Peanuts</th>
-              <th>Sesame</th>
-              <th>Soya</th>
-              <th>Sulphur Dioxide</th>
-               </tr>
-                 <% for (var i =0; i< dishes.length; i++) { %>
 
-              <tr class="table-row-odd">
-                
-                <td><%= dishes[i].Dishes %></td>
-                <td><%= dishes[i].Celery %></td>
-                <td><%= dishes[i].Gluten %></td>
-                <td><%= dishes[i].Crustaceous%></td>
-                <td><%= dishes[i].Eggs %></td>
-                <td><%= dishes[i].Fish %></td>
-                <td><%= dishes[i].Lupin %></td>
-                <td><%= dishes[i].Milk %></td>
-                <td><%= dishes[i].Moluscus %></td>
-                <td><%= dishes[i].Nuts %></td>
-                <td><%= dishes[i].Peanuts %></td>
-                <td><%= dishes[i].Sesame %></td>
-                <td><%= dishes[i].Soya %></td>
-              
-               </tr>
-              
-               <% } %>
-              </table>
-              
-              
-              
-              
-             
-          <div class="form-group">
-                    <div class="form-group">
-                <!-- Here start the input text fields -->
-                 <form action="/store"  method="post">
-                   
-             <input class="form-control" type="text" name="Dishes" placeholder="Dish">
-                     
-                
-                <div class="check-group" action="#">
-                <input type="checkbox" name="Celery" class="checkbox">
-                <label for="Celery">Celery</label>
-                 <input type="checkbox" name="Gluten" class="checkbox">
-                  <label for="Gluten ">Gluten</label>
-                  <input type="checkbox" name="Crustaceous" class="checkbox">
-                   <label for="Crusteceous">Crustaceous</label>
-                   <input type="checkbox" name="Eggs" class="checkbox">
-                    <label for="Eggs">Eggs</label>
-                    <input type="checkbox" name="Fish" class="checkbox">
-                     <label for="Fish">Fish</label>
-                     <input type="checkbox" name="Lupin" class="checkbox">
-                      <label for="Lupin">Lupin</label>
-                      <input type="checkbox" name="Milk" class="checkbox">
-                       <label for="Milk">Milk</label>
-                       <input type="checkbox" name="Moluscs" class="checkbox">
-                        <label for="Moluscs">Moluscs</label>
-                        <input type="checkbox" name="Mustard" class="checkbox">
-                         <label for="Mustard">Mustard</label>
-                         <input type="checkbox" name="Nuts" class="checkbox">
-                          <label for="Nuts">Nuts</label>
-                          <input type="checkbox" name="Peanuts" class="checkbox">
-                           <label for="Peanuts">Peanuts</label>
-                           <input type="checkbox" name="SesameSeeds" class="checkbox">
-                            <label for="SesameSeeds">Sesame Seeds</label>
-                            <input type="checkbox" name="Soya" class="checkbox">
-                             <label for="Soya">Soya</label>
-                             <input type="checkbox" name="SulphurDioxide" class="checkbox">
-                              <label for="SulphurDioxide">Sulphur Dioxide</label>
-
-               
-                
-        
-                   
-                <!-- This button add a dish to the table -->
-               <div class="buttons"> <button fg id="btn" type="submit" class="btn btn-primary">ADD DISH</button>
-                <button id="delete" class="btn btn-block btn-danger">Delete</button>
-               </form>
-              
-              
+              <%- include('layouts/checkbox') -%>
                
                 </div>
 
-              
-                
                     <p class="text-muted">To delete a Dish, click the required row first</p>
+                    
              
                
             </div>
+          
             <!-- This button delete a dish to the table -->
      </div>
                       
                  
                      <div class="image">
                      <!-- <img src="./img/applepie.jpg" width="400px" height="400px" ></div>   -->
-                     <div class="allergen"><i class="fas fa-check fa-2x" size="large"></i>
+                     
 </div>
     
       
@@ -209,7 +67,7 @@
 <script src="../index.js" >
 </script>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </body>
  
 

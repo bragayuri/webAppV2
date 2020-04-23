@@ -75,4 +75,16 @@ app.get("/", async (req, res) => {
     dishes: dishes,
   });
   console.log(dishes);
+  if ((dishes.Gluten = "on")) {
+    return "X";
+  }
+});
+
+//to get dish by id
+app.get("/post/:id", async (req, res) => {
+  console.log(req.params);
+  const dishes = await dishModel.findById(req.params.id);
+  res.render("post", {
+    dishes: dises,
+  });
 });
