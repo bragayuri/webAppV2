@@ -46,9 +46,17 @@
             <i class="fa fa-trash"></i></button
         ></a>
 
-        <button type="submit" class="update">
-          <i class="fas fa-pen-square"></i>
-        </button>
+        <a class="update" href="/put/<%= dishes[i].id %>">
+          <button
+            id="update"
+            type="button"
+            class="update"
+            data-toggle="modal"
+            data-target="#myModal"
+          >
+            <i class="fas fa-pen-square"></i>
+          </button>
+        </a>
       </td>
     </tr>
 

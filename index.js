@@ -20,6 +20,8 @@ const logger = require("morgan");
 // ROuting imports####################################################
 const homeController = require("./controller/home.js");
 
+const updateController = require("./controller/update.js");
+
 const dishModel = require("./model/food.js");
 
 var dishCtrl = require("./controller/dish-controller.js");
@@ -56,7 +58,7 @@ app.listen(3001, () => {
 });
 
 //Routes for a page##################################
-// app.get("/", homeController);
+app.get("/update", updateController);
 
 // End point to add a dish to the DB.
 
@@ -70,9 +72,11 @@ app.post("/store", async (req, res) => {
 // To get all the dishes
 
 app.get("/", async (req, res) => {
+  var myFalse = 1;
   const dishes = await dishModel.find({});
   res.render("index", {
     dishes: dishes,
+    myFalse: myFalse,
   });
   console.log(dishes);
 });
@@ -85,3 +89,37 @@ app.get("/delete/:id", async (req, res) => {
     res.redirect("/");
   });
 });
+
+// //Update
+// app.get("/update/:id"),
+//   async (req, res) => {
+//     const id = req.params.id;
+//     await res.redirect("/update");
+
+//     dishModel.findByIdAndUpdate(id, (err) => {});
+//   };
+
+//UPDATE
+
+app
+  .route("/put/:id")
+  .get((req, res) => {
+    const id = req.params.id;
+    const dishes = dishModel.find({}, (err, dish) => {
+      var myFalse = 2;
+
+      res.render("index", {
+        dishes: dishes,
+        idTransaction: id,
+        myFalse: myFalse,
+      });
+    });
+  })
+  .post((req, res) => {
+    const id = req.params.id;
+    dishModel.findByIdAndUpdate(id, req.body, { new: true }, (err) => {
+      console.log(req.body);
+      if (err) return res.send(500, err);
+      return res.redirect("/");
+    });
+  });
