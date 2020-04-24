@@ -90,33 +90,31 @@ app.get("/delete/:id", async (req, res) => {
   });
 });
 
-// //Update
-// app.get("/update/:id"),
-//   async (req, res) => {
-//     const id = req.params.id;
-//     await res.redirect("/update");
-
-//     dishModel.findByIdAndUpdate(id, (err) => {});
-//   };
-
 //UPDATE
 
 app
   .route("/put/:id")
   .get((req, res) => {
-    const id = req.params.id;
-    const dishes = dishModel.find({}, (err, dish) => {
+    var id = req.params.id;
+    console.log("1 ---    Numero do meu ID: " + id);
+
+    dishModel.findById(id, (err, dish) => {
+      console.log("2- Retorno da minha DB: " + dish);
       var myFalse = 2;
 
       res.render("index", {
-        dishes: dishes,
+        dishes: dish,
         idTransaction: id,
         myFalse: myFalse,
       });
+      console.log("2- Retorno da minha DB: " + dish);
     });
   })
   .post((req, res) => {
-    const id = req.params.id;
+    var id = req.params.id;
+    console.log("Id do UPDATE :" + id);
+    console.log("corpo do update" + req.params);
+
     dishModel.findByIdAndUpdate(id, req.body, { new: true }, (err) => {
       console.log(req.body);
       if (err) return res.send(500, err);
