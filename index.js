@@ -1,3 +1,5 @@
+const dotEnv = require('dotenv').config();
+
 const express = require("express");
 //Path is a module to help us to get the directory path...
 const axios = require("axios");
@@ -15,7 +17,7 @@ const mongoose = require("mongoose");
 
 const bodyParser = require("body-parser");
 
-const logger = require("morgan");
+
 
 // ROuting imports####################################################
 const homeController = require("./controller/home.js");
@@ -36,13 +38,12 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(logger("dev"));
+
 
 //##########creating the route object
 app.use(require("./router/routes"));
 
-mongoose.connect(
-  "mongodb+srv://FoodAllergen:pass1234@cluster0-fthuf.mongodb.net/FoodAllergen",
+mongoose.connect(process.env.URL_DB,
   { useNewUrlParser: true }
 );
 
