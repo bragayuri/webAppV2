@@ -72,7 +72,7 @@ app.post("/store", async (req, res) => {
 
 // To get all the dishes
 
-app.get("/", async (req, res) => {
+app.get("*", async (req, res) => {
   var myFalse = 1;
   const dishes = await dishModel.find({});
   res.render("index", {
