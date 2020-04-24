@@ -66,7 +66,7 @@ app.get("/update", updateController);
 app.post("/store", async (req, res) => {
   console.log("Request" + req);
   await dishModel.create(req.body, (error, foods) => {
-    res.redirect("/");
+    res.redirect("*");
   });
 });
 
@@ -87,7 +87,7 @@ app.get("/delete/:id", async (req, res) => {
   const id = req.params.id;
   dishModel.findByIdAndRemove(id, (err) => {
     if (err) return res.send(500, err);
-    res.redirect("/");
+    res.redirect("*");
   });
 });
 
@@ -119,6 +119,6 @@ app
     dishModel.findByIdAndUpdate(id, req.body, { new: true }, (err) => {
       console.log(req.body);
       if (err) return res.send(500, err);
-      return res.redirect("/");
+      return res.redirect("*");
     });
   });
