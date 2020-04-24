@@ -49,7 +49,7 @@ mongoose.connection.on("error", (err) => {
   process.exit();
 });
 
-app.use(express.static("public"));
+app.use(express.static("views"));
 
 app.listen(3001, () => {
   console.log("App listening on port 3001");
@@ -75,16 +75,13 @@ app.get("/", async (req, res) => {
     dishes: dishes,
   });
   console.log(dishes);
-  if ((dishes.Gluten = "on")) {
-    return "X";
-  }
 });
 
 //to get dish by id
-app.get("/post/:id", async (req, res) => {
-  console.log(req.params);
-  const dishes = await dishModel.findById(req.params.id);
-  res.render("post", {
-    dishes: dises,
+app.get("/delete/:id", async (req, res) => {
+  const id = req.params.id;
+  dishModel.findByIdAndRemove(id, (err) => {
+    if (err) return res.send(500, err);
+    res.redirect("/");
   });
 });

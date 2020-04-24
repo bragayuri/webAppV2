@@ -3,6 +3,10 @@ h1 {
   margin-left: 20px;
 }
 
+.bg-dark {
+  background-color: black !important;
+}
+
 #results tr:nth-child(even) {
   background-color: #f7e5cb;
 }
@@ -30,7 +34,7 @@ footer {
   background-position: center center;
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
 }
 
 #main-content {
@@ -46,6 +50,11 @@ footer {
 
 #btn {
   margin-bottom: 2px;
+  background: linear-gradient(
+    0deg,
+    rgba(160, 80, 33, 1) 0%,
+    rgba(244, 185, 67, 0.7710434515603116) 100%
+  );
 }
 
 .row {
@@ -59,10 +68,12 @@ footer {
 .form-group {
   display: flex;
   width: 85%;
+  padding-left: 149px;
+  padding-top: 5px;
 }
 
 .table-row-odd {
-  background-color: yellow;
+  background-color: #ffc6a5;
 }
 
 #dish-table {
@@ -82,14 +93,18 @@ footer {
 }
 
 #dish-table tr:hover {
-  background-color: red;
+  background-color: rgba(231, 133, 21, 0.801);
 }
 
 #dish-table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4caf50;
+  background: linear-gradient(
+    0deg,
+    rgba(206, 110, 56, 1) 0%,
+    rgba(244, 185, 67, 0.7710434515603116) 100%
+  );
   color: white;
 }
 

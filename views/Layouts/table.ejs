@@ -1,49 +1,57 @@
 <table id="dish-table">
-  <tr class="table-head">
-    <th>Dish Name</th>
-    <th>Celery</th>
-    <th>Gluten</th>
-    <th>Crustaceous</th>
-    <th>Eggs</th>
-    <th>Fish</th>
-    <th>Lupin</th>
-    <th>Milk</th>
-    <th>Moluscus</th>
-    <th>Nuts</th>
-    <th>Peanuts</th>
-    <th>Sesame</th>
-    <th>Soya</th>
-    <th>Sulphur Dioxide</th>
-    <th>Options</th>
-  </tr>
-  <% for (var i =0; i< dishes.length; i++) { %>
+  <thread>
+    <tr class="table-head">
+      <th>Dish Name</th>
+      <th>Celery</th>
+      <th>Gluten</th>
+      <th>Crustaceous</th>
+      <th>Eggs</th>
+      <th>Fish</th>
+      <th>Lupin</th>
+      <th>Milk</th>
+      <th>Moluscus</th>
+      <th>Nuts</th>
+      <th>Peanuts</th>
+      <th>Sesame</th>
+      <th>Soya</th>
+      <th>Sulphur Dioxide</th>
+      <th>Options</th>
+    </tr>
+  </thread>
+  <tbody>
+    <tr>
+      <% for (var i =0; i< dishes.length; i++) { %>
+    </tr>
 
-  <tr class="table-row-odd">
-    <td><%= dishes[i].Dishes %></td>
-    <td>
-      <%= dishes[i].Celery?'X':'' %>
-    </td>
-    <td><%= dishes[i].Gluten?'X':'' %></td>
-    <td><%= dishes[i].Crustaceous?'X':''%></td>
-    <td><%= dishes[i].Eggs?'X':'' %></td>
-    <td><%= dishes[i].Fish?'X':'' %></td>
-    <td><%= dishes[i].Lupin?'X':'' %></td>
-    <td><%= dishes[i].Milk?'X':'' %></td>
-    <td><%= dishes[i].Moluscus?'X':'' %></td>
-    <td><%= dishes[i].Nuts?'X':'' %></td>
-    <td><%= dishes[i].Peanuts?'X':'' %></td>
-    <td><%= dishes[i].Sesame?'X':'' %></td>
-    <td><%= dishes[i].Soya?'X':'' %></td>
-    <td><%= dishes[i].Sulphur?'X':'' %></td>
-    <td>
-      <button type="submit" formmethod="post" class="delete">
-        <i class="fa fa-trash"></i>
-      </button>
-      <button type="submit" formmethod="post" class="update">
-        <i class="fas fa-pen-square"></i>
-      </button>
-    </td>
-  </tr>
+    <tr class="table-row-odd">
+      <td><%= dishes[i].Dishes %></td>
+      <td>
+        <%= dishes[i].Celery?'X':'' %>
+      </td>
+      <td><%= dishes[i].Gluten?'X':'' %></td>
+      <td><%= dishes[i].Crustaceous?'X':''%></td>
+      <td><%= dishes[i].Eggs?'X':'' %></td>
+      <td><%= dishes[i].Fish?'X':'' %></td>
+      <td><%= dishes[i].Lupin?'X':'' %></td>
+      <td><%= dishes[i].Milk?'X':'' %></td>
+      <td><%= dishes[i].Moluscus?'X':'' %></td>
+      <td><%= dishes[i].Nuts?'X':'' %></td>
+      <td><%= dishes[i].Peanuts?'X':'' %></td>
+      <td><%= dishes[i].Sesame?'X':'' %></td>
+      <td><%= dishes[i].Soya?'X':'' %></td>
+      <td><%= dishes[i].Sulphur?'X':'' %></td>
+      <td>
+        <a href="/delete/<%= dishes[i].id %>"
+          ><button class="delete">
+            <i class="fa fa-trash"></i></button
+        ></a>
 
-  <% } %>
+        <button type="submit" class="update">
+          <i class="fas fa-pen-square"></i>
+        </button>
+      </td>
+    </tr>
+
+    <% } %>
+  </tbody>
 </table>
