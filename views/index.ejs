@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--Author Yuri Braga 2017141-->
+
+<!--Importing Layout Header-->
  <%- include('Layouts/header'); -%>
 <body>
-
+<!--Importing Layout Navbar-->
   <%- include('Layouts/navbar') -%>
   <!-- Page Content -->
 <div class="view">
@@ -17,16 +20,19 @@
         <!-- Div with Table coming from XSL file -->
       </div>
       <div id="main-content">
+
+        <!--Importing Layout Table-->
         
         <%- include('Layouts/table') -%>
        
+          <!--Importing Layout Checkbox-->
 
               <%- include('Layouts/checkbox') -%>
             
                
                 </div>
 
-                    <p class="text-muted">To delete a Dish, click the required row first</p>
+                
                     
              
                
@@ -34,7 +40,7 @@
           
             
      </div>
-                    
+                 <!--Importing Layout Modal Pop Up-->   
      <%- include('Layouts/modal') -%>
           
                      
@@ -58,15 +64,8 @@
  </div>
 
   <!-- Bootstrap core JavaScript -->
+  <%- include('Layouts/scripts') -%>
   
- <script src="jQuery/jquery.min.js"></script>
- 
-<script src="js/bootstrap.min.js"></script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </body>
  
-
-
 </html>

@@ -17,10 +17,9 @@
     "mongoose": "^5.9.9",
     "path": "^0.12.7"
   },
-   
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

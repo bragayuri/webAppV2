@@ -17,6 +17,7 @@ const FoodSchema = new Schema({
   Soya: String,
   Eggs: String,
   Peanuts: String,
+  SulphurDioxide: String,
 });
 
 const FoodModel = mongoose.model("Food", FoodSchema);

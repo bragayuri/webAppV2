@@ -1,3 +1,4 @@
+<!--Table Component which will hold all the dishes to be displayed-->
 <table id="dish-table">
   <thread>
     <tr class="table-head">
@@ -15,13 +16,16 @@
       <th>Sesame</th>
       <th>Soya</th>
       <th>Sulphur Dioxide</th>
+      <th>Mustard</th>
       <th>Options</th>
     </tr>
   </thread>
   <tbody>
+    <!--This for each loop will iterate the dish Object sent from the JSON-->
     <tr>
       <% for (var i =0; i< dishes.length; i++) { %>
     </tr>
+    <!--Displaying the object from the DB-->
 
     <tr class="table-row-odd">
       <td><%= dishes[i].Dishes %></td>
@@ -39,13 +43,16 @@
       <td><%= dishes[i].Peanuts?'X':'' %></td>
       <td><%= dishes[i].Sesame?'X':'' %></td>
       <td><%= dishes[i].Soya?'X':'' %></td>
-      <td><%= dishes[i].Sulphur?'X':'' %></td>
+      <td><%= dishes[i].SulphurDioxide?'X':'' %></td>
+      <td><%= dishes[i].Mustard?'X':'' %></td>
+
       <td>
+        <!--Delete Button which will call the /delete/ method-->
         <a href="/delete/<%= dishes[i].id %>"
           ><button class="delete">
             <i class="fa fa-trash"></i></button
         ></a>
-
+        <!--Update Button to call Modal and update dish detail-->
         <a class="update" href="/put/<%= dishes[i].id %>">
           <button
             id="update"

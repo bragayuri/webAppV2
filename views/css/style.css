@@ -80,6 +80,7 @@ footer {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  font-size: small;
 }
 
 #dish-table td,
@@ -142,7 +143,7 @@ footer {
 }
 
 .modal-content {
-  width: 500px;
+  width: 600px;
   height: 200px;
   background: white;
   border-radius: 10px;
