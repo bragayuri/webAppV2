@@ -54,8 +54,8 @@ mongoose.connection.on("error", (err) => {
 
 app.use(express.static("views"));
 
-app.listen(3001, () => {
-  console.log("App listening on port 3001");
+app.listen(4001, () => {
+  console.log("App listening on port 4001");
 });
 
 //Routes for a page##################################
@@ -66,13 +66,13 @@ app.get("/update", updateController);
 app.post("/store", async (req, res) => {
   console.log("Request" + req);
   await dishModel.create(req.body, (error, foods) => {
-    res.redirect("*");
+    res.redirect("/");
   });
 });
 
 // To get all the dishes
 
-app.get("*", async (req, res) => {
+app.get("/", async (req, res) => {
   var myFalse = 1;
   const dishes = await dishModel.find({});
   res.render("index", {
@@ -87,7 +87,7 @@ app.get("/delete/:id", async (req, res) => {
   const id = req.params.id;
   dishModel.findByIdAndRemove(id, (err) => {
     if (err) return res.send(500, err);
-    res.redirect("*");
+    res.redirect("/");
   });
 });
 
@@ -119,6 +119,6 @@ app
     dishModel.findByIdAndUpdate(id, req.body, { new: true }, (err) => {
       console.log(req.body);
       if (err) return res.send(500, err);
-      return res.redirect("*");
+      return res.redirect("/");
     });
   });
