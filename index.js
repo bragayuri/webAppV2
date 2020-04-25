@@ -71,16 +71,17 @@ app.post("/store", async (req, res) => {
 });
 
 // To get all the dishes
+app.get("/",homeController);
 
-app.get("/", async (req, res) => {
-  var myFalse = 1;
-  const dishes = await dishModel.find({});
-  res.render("index", {
-    dishes: dishes,
-    myFalse: myFalse,
-  });
-  console.log(dishes);
-});
+// app.get("/", async (req, res) => {
+//   var myFalse = 1;
+//   const dishes = await dishModel.find({});
+//   res.render("index", {
+//     dishes: dishes,
+//     myFalse: myFalse,
+//   });
+//   console.log(dishes);
+// });
 
 //to get dish by id
 app.get("/delete/:id", async (req, res) => {

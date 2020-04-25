@@ -1,8 +1,11 @@
-const Dish = require("../model/food.js");
+const dishModel = require("../model/food.js");
 
 module.exports = async (req, res) => {
-  const homepage = await Dish.find({});
+  var myFalse = 1;
+  const dishes = await dishModel.find({});
   res.render("index", {
-    homepage,
+    dishes: dishes,
+    myFalse: myFalse,
   });
+  console.log(dishes);
 };
