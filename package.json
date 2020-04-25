@@ -17,13 +17,9 @@
     "mongoose": "^5.9.9",
     "path": "^0.12.7"
   },
-   
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-
+<!--This modal Object was  hardcoded crafted. It is a hidden div which will be displayed when updating a dish-->
          <!--Modal Section-->
           <div class="bg-modal" id= <%=  myFalse===1? "hidden" : "displayed" %>>
             <div class="modal-content">
@@ -6,39 +6,53 @@
 
             
 
-
+       <!--Form action will post the values into the put method in order to update details-->
               <form action="/put/<%= dishes.id %>"  method="POST">
 
             <span><h3><%= dishes.Dishes %></h3></span>
+            
             <div class="check-group" action="#">
               <input type="checkbox" name="Celery" class="checkbox">
               <label for="Celery">Celery</label>
-               <input type="checkbox" name="Gluten" class="checkbox">
+               
+              <input type="checkbox" name="Gluten" class="checkbox">
                 <label for="Gluten ">Gluten</label>
+
                 <input type="checkbox" name="Crustaceous" class="checkbox">
-                 <label for="Crusteceous">Crustaceous</label>
+                 <label for="Crustaceous">Crustaceous</label>
+
                  <input type="checkbox" name="Eggs" class="checkbox">
                   <label for="Eggs">Eggs</label>
+
                   <input type="checkbox" name="Fish" class="checkbox">
                    <label for="Fish">Fish</label>
+
                    <input type="checkbox" name="Lupin" class="checkbox">
                     <label for="Lupin">Lupin</label>
+
                     <input type="checkbox" name="Milk" class="checkbox">
                      <label for="Milk">Milk</label>
-                     <input type="checkbox" name="Moluscs" class="checkbox">
-                      <label for="Moluscs">Moluscs</label>
+
+                     <input type="checkbox" name="Moluscus" class="checkbox">
+                      <label for="Moluscus">Moluscus</label>
+
                       <input type="checkbox" name="Mustard" class="checkbox">
-                       <label for="Mustard">Mustard</label>
+                        <label for="Mustard">Mustard</label>
+
                        <input type="checkbox" name="Nuts" class="checkbox">
-                        <label for="Nuts">Nuts</label>
+                         <label for="Nuts">Nuts</label>
+
                         <input type="checkbox" name="Peanuts" class="checkbox">
-                         <label for="Peanuts">Peanuts</label>
+                          <label for="Peanuts">Peanuts</label>
+
                          <input type="checkbox" name="SesameSeeds" class="checkbox">
                           <label for="SesameSeeds">Sesame Seeds</label>
+
                           <input type="checkbox" name="Soya" class="checkbox">
-                           <label for="Soya">Soya</label>
+                            <label for="Soya">Soya</label>
+
                            <input type="checkbox" name="SulphurDioxide" class="checkbox">
-                            <label for="SulphurDioxide">Sulphur Dioxide</label>
+                             <label for="SulphurDioxide">Sulphur Dioxide</label>
             </div>
                    
             <button id="btn-update" type="submit">Update</button></a>

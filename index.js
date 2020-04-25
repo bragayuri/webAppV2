@@ -1,4 +1,7 @@
-const dotEnv = require('dotenv').config();
+//Author: Yuri Braga 2017141
+
+//Dot Env to hide the environment variables.
+const dotEnv = require("dotenv").config();
 
 const express = require("express");
 //Path is a module to help us to get the directory path...
@@ -17,19 +20,16 @@ const mongoose = require("mongoose");
 
 const bodyParser = require("body-parser");
 
-
-
-// ROuting imports####################################################
+// Routing imports####################################################
 const homeController = require("./controller/home.js");
 
-const updateController = require("./controller/update.js");
+// const updateController = require("./controller/update.js");
+
+const deleteController = require("./controller/delete.js");
+
+const addController = require("./controller/post.js");
 
 const dishModel = require("./model/food.js");
-
-var dishCtrl = require("./controller/dish-controller.js");
-
-//When User clicks ADD dish. Express will call the Dish Controller.CreateDish
-// app.post("/store", dishCtrl.createDish);
 
 //With app view Engine, express to use EJS as template engine.Each file ending in ejs would be rendered..
 app.set("view engine", "ejs");
@@ -38,61 +38,39 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-
 //##########creating the route object
 app.use(require("./router/routes"));
 
-mongoose.connect(process.env.URL_DB,
-  { useNewUrlParser: true }
-);
+//Connection with Atlas Mongo DB instance.
+
+mongoose.connect(process.env.URL_DB, { useNewUrlParser: true });
 
 mongoose.connection.on("error", (err) => {
   console.log("Mongo error", err);
   process.exit();
 });
 
+//Static files will be served from the  Views Folder
 app.use(express.static("views"));
 
+//Port 4001 for the Server
 app.listen(4001, () => {
   console.log("App listening on port 4001");
 });
 
-//Routes for a page##################################
-app.get("/update", updateController);
+//Routes for CRUD within a page##################################
+//Brings up the Index JS
+app.get("/", homeController);
+// app.get("/update", updateController);
+//Sends to Delete a dish
+app.get("/delete/:id", deleteController);
+//Sends to Add a dish
+app.post("/store", addController);
 
-// End point to add a dish to the DB.
-
-app.post("/store", async (req, res) => {
-  console.log("Request" + req);
-  await dishModel.create(req.body, (error, foods) => {
-    res.redirect("/");
-  });
-});
-
-// To get all the dishes
-
-app.get("/", async (req, res) => {
-  var myFalse = 1;
-  const dishes = await dishModel.find({});
-  res.render("index", {
-    dishes: dishes,
-    myFalse: myFalse,
-  });
-  console.log(dishes);
-});
-
-//to get dish by id
-app.get("/delete/:id", async (req, res) => {
-  const id = req.params.id;
-  dishModel.findByIdAndRemove(id, (err) => {
-    if (err) return res.send(500, err);
-    res.redirect("/");
-  });
-});
+// app.put("/put/:id",updateController);
 
 //UPDATE
-
+// Route to update a dish.
 app
   .route("/put/:id")
   .get((req, res) => {
