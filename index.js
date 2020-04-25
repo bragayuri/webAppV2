@@ -55,8 +55,8 @@ mongoose.connection.on("error", (err) => {
 app.use(express.static("views"));
 
 //Port 4001 for the Server
-app.listen(4001, () => {
-  console.log("App listening on port 4001");
+app.listen( process.env.PORT || 3000, () => {
+  console.log("App listening on port 3030");
 });
 
 //Routes for CRUD within a page##################################
