@@ -181,3 +181,11 @@ footer {
   transform: rotate(45deg);
   cursor: pointer;
 }
+
+.close a{
+   text-decoration: none;
+}
+
+.table-row-odd strong{
+    font-family: cursive;
+}
