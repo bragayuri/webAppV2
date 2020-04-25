@@ -24,9 +24,14 @@ const homeController = require("./controller/home.js");
 
 const updateController = require("./controller/update.js");
 
+const deleteController = require("./controller/delete.js");
+
+const addController = require("./controller/post.js");
+
 const dishModel = require("./model/food.js");
 
 var dishCtrl = require("./controller/dish-controller.js");
+
 
 //When User clicks ADD dish. Express will call the Dish Controller.CreateDish
 // app.post("/store", dishCtrl.createDish);
@@ -58,20 +63,26 @@ app.listen(4001, () => {
   console.log("App listening on port 4001");
 });
 
-//Routes for a page##################################
-app.get("/update", updateController);
+//Routes for CRUD within a page##################################
+app.get("/",homeController);
+// app.get("/update", updateController);
+app.get("/delete/:id", deleteController);
+app.post("/store",addController);
+// app.put("/put/:id",updateController);
+
+
 
 // End point to add a dish to the DB.
 
-app.post("/store", async (req, res) => {
-  console.log("Request" + req);
-  await dishModel.create(req.body, (error, foods) => {
-    res.redirect("/");
-  });
-});
+// app.post("/store", async (req, res) => {
+//   console.log("Request" + req);
+//   await dishModel.create(req.body, (error, foods) => {
+//     res.redirect("/");
+//   });
+// });
 
 // To get all the dishes
-app.get("/",homeController);
+
 
 // app.get("/", async (req, res) => {
 //   var myFalse = 1;
@@ -82,15 +93,16 @@ app.get("/",homeController);
 //   });
 //   console.log(dishes);
 // });
+// app.get("/delete/:id",deleteController);
 
-//to get dish by id
-app.get("/delete/:id", async (req, res) => {
-  const id = req.params.id;
-  dishModel.findByIdAndRemove(id, (err) => {
-    if (err) return res.send(500, err);
-    res.redirect("/");
-  });
-});
+// //to get dish by id
+// app.get("/delete/:id", async (req, res) => {
+//   const id = req.params.id;
+//   dishModel.findByIdAndRemove(id, (err) => {
+//     if (err) return res.send(500, err);
+//     res.redirect("/");
+//   });
+// });
 
 //UPDATE
 
