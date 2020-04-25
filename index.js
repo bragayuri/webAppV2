@@ -1,7 +1,8 @@
+const dotEnv = require("dotenv").config();
 //Author: Yuri Braga 2017141
 
 //Dot Env to hide the environment variables.
-const dotEnv = require("dotenv").config();
+
 
 const express = require("express");
 //Path is a module to help us to get the directory path...
